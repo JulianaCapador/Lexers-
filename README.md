@@ -5,10 +5,10 @@ Análisis léxico, semántico y sintáctico
 # Jorge Andrés Lucero Hernández 20152020082
 
 # Version1 
-# galgo.in
-# lexa.py
+ galgo.in
+ lexa.py
 
 # Version2
-# lexer.in
-# expresion.in
-# lectura de archivo.py
+ lexer.in
+ expresion.in
+ lectura de archivo.py
