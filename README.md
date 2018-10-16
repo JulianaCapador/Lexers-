@@ -12,3 +12,6 @@ Análisis léxico, semántico y sintáctico
  lexer.in
  expresion.in
  lectura de archivo.py
+ 
+ # Lexer Karel
+ lexeKarel.py
