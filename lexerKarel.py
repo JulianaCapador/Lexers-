@@ -1,4 +1,4 @@
-#import ply.lex as lex
+import ply.lex as lex
 
 declaracionPrograma = ('iniciar-programa','inicia-ejecucion',
                        'termina-ejecucion','finalizar-programa')
@@ -42,8 +42,12 @@ def t_PARA(t):
 def t_MIENTRAS(t):
     r'mientras'
     return t
-
-    
+def t_declaracionPrograma(t):
+    t['iniciar-programa']
+    t['inicia-ejecucion']
+    t['termina-ejecucion']
+    t['finalizar-programa']
+    return t
 # Error handling rule
 def t_error(t):
     lista.append("'%s' -> Illegal character " % t.value[0])
