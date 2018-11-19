@@ -14,4 +14,4 @@ Análisis léxico, semántico y sintáctico
  lectura de archivo.py
  
  # Lexer Karel
- karel1.py
+ Karel1.py
