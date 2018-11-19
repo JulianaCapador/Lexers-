@@ -8,8 +8,6 @@ mientras
 {
 izquierda
 avanza
-coge-zumbador
+coge_zumbador
 iniciar_programa
-"hola"
-
-/* hola soy java 12:12 p. m. 19/11/2018*/
+"hola" derecha_libre
