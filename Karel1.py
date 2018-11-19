@@ -1,12 +1,12 @@
 import ply.lex as lex
 import codecs 
 
-programa = ['INICIAR-PROGRAMA']
-tokens = reservadas + ['LETRA','NUMBER','PLUS','MINUS','TIMES','DIVIDE', 'EQUALS','SEMICOLON' ]
+programa = ['INICIAR_PROGRAMA','INICIA_EJECUCION','TERMINA_EJECUCION','FINALIZAR_PROGRAMA']
+reservadas = ['SI','NETONCES','SINO','MIENTRAS','HACER','REPETIR','VECES']
+tokens = reservadas+programa + ['LETRA','NUMBER','PLUS','TIMES','DIVIDE', 'EQUALS','SEMICOLON','CADENA','COMMENT_SAME_LINE_PASCAL','COMMENT_SAME_LINE_JAVA']
 
 t_ignore = ' \t'
 t_PLUS = r'\+'
-t_MINUS = r'-'
 t_TIMES = r'\*'
 t_DIVIDE = r'/'
 t_EQUALS = r'='
@@ -22,23 +22,29 @@ def t_NUMBER(t):
 def t_LETRA(t):
     r'[a-z][a-zA-Z0-9_]*'
 
-    if t.value.upper() in reservadas:
+    if t.value.upper() in tokens:
         t.value = t.value.upper()
         t.type = t.value
         return t
-    
+#solo lo reconoce  
 def t_COMMENT_SAME_LINE_PASCAL(t):
-    r'\{.*'
+    r'[(* *)[\]{}]'
+    pass
+def t_COMMENT_SAME_LINE_JAVA(t):
+    r'[/* */]'
     pass
 
 def t_SPACE(t):
     r'\s+'
     pass
 
-def EXPRESION(t):
-    r'APAGATE'
-    r'IZQUIERDA'
+def t_CADENA(t):
+    r'\".*'
     return t
+
+#def t_INICIAR(t):
+    #r'\coge-zumbador'
+    #return t
 
 # Error handling rule
 def t_error(t):
@@ -57,5 +63,5 @@ lex.input (palabra)
 while True:
     tok = lex.token()
     if not tok: break
-    print str(tok.value) + " - " + str(tok.type)
+    print str(tok.value) + " -> " + str(tok.type)
 
