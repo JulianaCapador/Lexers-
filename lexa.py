@@ -25,7 +25,7 @@ lex.lex() # Build the lexer
 #lex.input("x = 3 - 4 + 5 * 6")
 
 #lectura del archivo
-fo = open("E:\galgo.in","r")
+fo = open("galgo.in","r")
 lineas  = (fo.read().splitlines())
 palabra = ''.join(lineas)
 lex.input (palabra)
